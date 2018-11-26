@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+	<select id="findAll" resultType="com.example.demo.entity.User">
+		SELECT * FROM tb_user
+	</select>
+	
+	<select id="findById" resultType="com.example.demo.entity.User" parameterType="String">
+		SELECT * FROM tb_user WHERE id=#{id}
+	</select>
+	
+	<insert id="create" parameterType="com.example.demo.entity.User">
+		INSERT INTO tb_user(id,username,password,address,phone,power) VALUES(#{id},#{username},#{password},#{address},#{phone},#{power})
+	</insert>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM tb_user WHERE id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="com.example.demo.entity.User">
+		UPDATE tb_user SET WHERE 1=1
+		<if test="username != null">
+			username=#{username},
+		</if>
+		<if test="password != null">
+			password = #{password}
+		</if>
+		<if test="address != null">
+			address = #{address}
+		</if>
+		<if test="phone != null">
+			phone = #{phone}
+		</if>
+		<if test="power != null">
+			power = #{power}
+		</if>
+		WHERE id=#{id}
+	</update>
+
+	<select id="findByName" parameterType="String" resultType="com.example.demo.entity.User"> 
+		SELECT * FROM tb_user WHERE username=#{username}
+	</select>
+
+
+</mapper>

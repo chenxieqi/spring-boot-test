@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body
+{
+    background-color:white;
+}
+h1
+{
+    color:#ff4a4a;
+    position:absolute;
+    left:300px;
+}
+p
+{
+    font-family:"Times New Roman";
+    font-size:20px;
+}
+
+div {
+    width: 300px;
+    border: 25px solid #ff4a4a;
+    padding: 25px;
+    margin: 25px;
+    position:absolute;
+    left:100px;
+    top:150px;
+}

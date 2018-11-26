@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script th:src="@{/js/jquery-2.1.4.min.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
+</head>
+<body>
+<div class="left">
+<p class="name" th:text="'id: ' + ${UserForm.id}" />
+</div>
+<div class="right">
+<form id="upload" method="POST" action="/upload" enctype="multipart/form-data">
+	<span class="file button">
+		<span>select file</span>
+	    <input type="file" name="file" />
+	</span><br/><br/>
+    <input class="button" type="button" value="upload" onclick="doUpload()"/><br/><br/>
+</form>
+</div>
+<div class="rightDown">
+<input class="button" type="button" value="download" onclick="doDownload()">
+<form id="download" method="POST" action="/download">
+</form>
+</div>
+<script type="text/javascript">
+	function doUpload(){
+		var upl=document.getElementById("upload");
+		upl.submit();
+	}
+	function doDownload(){
+		var dnl=document.getElementById("download");
+		dnl.submit();
+	}
+
+</script>
+</body>
+</html>
